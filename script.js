@@ -1,23 +1,34 @@
-//   get total income
-let totalIncome = parseFloat(document.getElementById('total-income').value)
+document.getElementById('calculate-btn').addEventListener('click', function() {
 
 
-
-// calculate totalExpense
-let totalExpense = document.getElementById('calculate-btn').addEventListener('click', function() {
-    //  get expenses input value 
-    let foodExpense = parseFloat(document.getElementById('food-expense').value)
-    let rentExpense = parseFloat(document.getElementById('rent-expense').value)
-    let clothExpense = parseFloat(document.getElementById('cloth-expense').value)
-
-    // add all expenses
-    document.getElementById('total-expenses').innerText = foodExpense + rentExpense + clothExpense
+    const foodInput = document.getElementById('food-expense')
+    const foodText = foodInput.value;
+    const foodAmount = parseFloat(foodText)
 
 
-    // calculate remaining balance
-    const balance = totalIncome - totalExpense;
-    console.log(typeof balance);
-    const v = document.getElementById('remaining-balance')
-    console.log(v);
+    const rentInput = document.getElementById('rent-expense')
+    const rentText = rentInput.value;
+    const rentAmount = parseFloat(rentText)
+    console.log(rentAmount);
+
+    const clothInput = document.getElementById('cloth-expense')
+    const clothText = clothInput.value;
+    const clothAmount = parseFloat(clothText)
+
+    // add total
+    let sumOfExpenses = foodAmount + rentAmount + clothAmount
+    console.log(sumOfExpenses);
+
+    // update balance 
+
+    const totalBalance = document.getElementById('total-income')
+    totalBalanceText = totalBalance.value
+    totalBalanceAmount = parseFloat(totalBalanceText)
+
+
+    const newBalance = totalBalanceAmount - sumOfExpenses;
+    console.log(newBalance);
+    document.getElementById('total-expenses').innerText = sumOfExpenses
+    document.getElementById('balance').innerText = newBalance
 
 })
