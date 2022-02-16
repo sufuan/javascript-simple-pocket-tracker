@@ -13,4 +13,11 @@ let totalExpense = document.getElementById('calculate-btn').addEventListener('cl
     // add all expenses
     document.getElementById('total-expenses').innerText = foodExpense + rentExpense + clothExpense
 
+
+    // calculate remaining balance
+    const balance = totalIncome - totalExpense;
+    console.log(typeof balance);
+    const v = document.getElementById('remaining-balance')
+    console.log(v);
+
 })
