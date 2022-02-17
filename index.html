@@ -39,18 +39,18 @@
                     <label class="form-label">Clothes</label>
                     <input type="text" class="form-control " id="cloth-expense" required>
                     <div class="text-center">
-                        <button id="calculate-btn" type="button" class="btn btn-info m-2">Calculate</button>
+                        <button onclick="calc()" type="button" class="btn btn-info  let remainingBalance = calc()m-2">Calculate</button>
                     </div>
 
                     <h5>Total Expense :<span id="total-expenses">0</span></h5>
                     <h5>Balane :<span id="balance">5000</span></h5>
 
                     <div class="d-flex align-items-center">
-                        <h5 class="me-2">save </h5><input class="m-5" type="text"> <span>%</span><button type="button" class="btn btn-info m-2">Save</button>
+                        <h5 class="me-2">save </h5><input id="save-parcent" class="m-5" type="text"> <span>%</span><button onclick="calculatePercent()" type="button" class="btn btn-info m-2">Save</button>
                     </div>
 
-                    <h5>Savign amount: <span>2000</span></h5>
-                    <h5>Remaining amount: <span>2000</span></h5>
+                    <h5>Savign amount: <span id="saving-amount">0</span></h5>
+                    <h5>Remaining amount: <span id="remain-amount">0</span></h5>
                 </div>
 
             </div>
