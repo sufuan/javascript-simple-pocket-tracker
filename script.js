@@ -1,4 +1,4 @@
-function add() {
+function addExpenses() {
     //     // get all input value
     const foodInput = document.getElementById('food-expense')
     const rentInput = document.getElementById('rent-expense')
@@ -18,22 +18,16 @@ function add() {
         document.getElementById('err1').innerText = ''
         return sumOfExpenses
 
-
-
-
     } else {
 
-        document.getElementById('err1').innerText = 'err'
+        document.getElementById('err1').innerText = 'Enter valied input'
     }
-
 
 }
 
-
-
 function calc() {
 
-    let sumOfExpenses = add()
+    let sumOfExpenses = addExpenses()
 
     let totalBalanceInput = document.getElementById('total-income').value
     let totalBalanceAmount = parseFloat(totalBalanceInput)
@@ -46,7 +40,7 @@ function calc() {
             alert('Money expenses can not be bigger than income')
             document.getElementById('balance').innerText = 0
             document.getElementById('total-expenses').innerText = 0
-            document.getElementById('err1').innerText = 'err'
+            document.getElementById('err1').innerText = 'Enter valid input'
 
         } else {
 
@@ -57,29 +51,14 @@ function calc() {
         document.getElementById('err').innerText = ''
 
     } else {
-        document.getElementById('err').innerText = 'err'
+        document.getElementById('err').innerText = 'Enter valied input'
     }
-
 
     return totalBalanceAmount
 
 
 
-
-
-
 }
-
-// 
-
-
-//
-
-
-
-
-
-
 
 function calculatePercent() {
     // calulate percentence 
@@ -94,16 +73,19 @@ function calculatePercent() {
         document.getElementById('saving-amount').innerText = savings
         console.log('ok');
 
+        // calculate remain saving 
 
-
-        let sumOfExpenses = add()
+        let sumOfExpenses = addExpenses()
         let remainingBalance = totalBalanceAmount - sumOfExpenses
         let remainSavings = remainingBalance - savings
         document.getElementById('remain-amount').innerText = remainSavings
         document.getElementById('err2').innerText = ''
 
     } else {
-        document.getElementById('err2').innerText = 'err'
+        document.getElementById('err2').innerText = 'Enter valied input'
+        document.getElementById('remain-amount').innerText = 0
+        document.getElementById('saving-amount').innerText = 0
+
     }
 
 
